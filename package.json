@@ -1,16 +1,16 @@
 {
-  "name": "next-ga",
-  "version": "2.3.4",
+  "name": "next-ym",
+  "version": "2.3.4-pre.4",
   "main": "index.js",
-  "repository": "https://github.com/sergiodxa/next-ga.git",
+  "repository": "https://github.com/futpib/next-ym.git",
   "author": "Sergio Xalambrí <sergiodxa@gmail.com> (https://sergiodxa.com)",
   "license": "MIT",
   "keywords": [
     "nextjs",
     "react",
     "analytics",
-    "ga",
-    "google analytics",
+    "ym",
+    "yandex metrika",
     "hoc",
     "high order component"
   ],
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "debug": "^4.0.0",
-    "react-ga": "^2.5.3"
+    "react-ym": "^0.0.7"
   },
   "peerDependencies": {
     "next": "^6.0.0 || ^7.0.0",

@@ -1,26 +1,25 @@
-import ReactGA from "react-ga";
+import { ym } from "react-ym";
 
 const IS_BROWSER = typeof window !== "undefined";
 
+let key;
+
 export function init(code) {
-  if (IS_BROWSER && !window.GA_INITIALIZED && code) {
-    ReactGA.initialize(code);
+  key = `yaCounter${code}`;
+
+  if (IS_BROWSER && !window[key] && code) {
+    ym.initialize(code);
   }
 }
 
 export function pageview() {
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
-}
-
-export function event(category = "", action = "") {
-  if (category && action) {
-    ReactGA.event({ category, action });
+  if (window[key]) {
+    window[key].hit(window.location.pathname);
   }
 }
 
-export function exception(description = "", fatal = false) {
-  if (description) {
-    ReactGA.exception({ description, fatal });
+export function reachGoal(...args) {
+  if (window[key]) {
+    window[key].reachGoal(...args);
   }
 }

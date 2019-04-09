@@ -10,16 +10,6 @@ export function pageview() {
   log(`Pageview triggered for ${window.location.pathname}`);
 }
 
-export function event(category = "", action = "") {
-  log(
-    `Event for category ${category} and action ${action} triggered`
-  );
-}
-
-export function exception(description = "", fatal = false) {
-  log(
-    `${
-      fatal ? "Fatal exception" : "Exception"
-    } with description ${description}`
-  );
+export function reachGoal(...args) {
+  log('Goal reached:', ...args);
 }
